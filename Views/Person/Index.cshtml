@@ -1,0 +1,25 @@
+﻿@model TP2.Models.Person
+@{
+
+    if (Model == null)
+    {
+        <div class="active">
+            <h3>
+                Cet ID est
+                invalide
+            </h3>
+        </div>
+    }
+    else
+    {
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">ID : @Model.Id</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.first_name @Model.last_name</h5>
+                <p class="card-text">Email : @Model.email</p>
+                <p class="card-text">Image : @Model.image</p>
+                <p class="card-text">Country : @Model.country</p>
+            </div>
+        </div>
+    }
+}
