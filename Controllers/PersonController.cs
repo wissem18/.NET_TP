@@ -36,13 +36,14 @@ namespace TP2.Controllers
 
         [HttpPost]
         [Route("Person/search")]
-        public IActionResult form(String firstname, String country)
+        public IActionResult form(String first_name, String country)
         {
             Personal_info p_info = new Personal_info();
             List<Person>  persons= p_info.getAllPersons();
+          
             foreach (Person person in persons)
             {
-                if (person.first_name == firstname && person.country == country)
+                if (person.first_name == first_name && person.country == country)
                 {
                     return RedirectToAction("index", new {id=person.Id});
 
